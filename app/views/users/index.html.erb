@@ -1,1 +1,18 @@
 <h1>Пользователи</h1>
+
+<table>
+	<tr>
+    <th>Почта</th>
+    <th>Роль</th>
+	</tr>
+	<% @collection.each do |object| %>
+    <tr>
+      	<td>
+      		<%= object.email %>
+      	</td>
+        <td>
+          <%= object.role %>
+        </td>
+    </tr>
+	<% end %>
+</table>

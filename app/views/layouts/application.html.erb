@@ -15,6 +15,10 @@
 				<%= render 'main/menu' %>
 			</div>
 			<div class='col-md-10'>
+				<% if flash.keys.present? %>
+      		<br>
+      		<%= render 'layouts/flash_messages', flash: flash %>
+  			<% end %>
 				<%= yield %>
 			</div>
 		</div>

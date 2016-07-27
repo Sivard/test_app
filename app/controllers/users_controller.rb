@@ -1,6 +1,7 @@
 class UsersController < MainController
   def index
-    @users = User.all
+    @collection = User.all
+    authorize @collection
   end
 
   def update

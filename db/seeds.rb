@@ -9,7 +9,14 @@ roles_array = %w(admin programmer director manager)
 25.times do |num|
   Button.create(roles: [roles_array.sample], link: "link_#{num}")
 end
-# create Menu
+# Create Menu
 30.times do |num|
   Menu.create(roles: [roles_array.sample], url: '#', title: "title_#{num}")
+end
+
+# Create Pages
+roles_array.each do |r|
+  10.times do |num|
+    Page.create(body: "text #{num} #{r}", title: "title_#{num}")
+  end
 end
