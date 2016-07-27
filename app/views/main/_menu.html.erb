@@ -1,0 +1,13 @@
+<ul class='list-group'>
+	<li class='list-group-item'>
+    <%= link_to 'Пользователи', users_path %>
+  </li>
+  <li class='list-group-item'>
+    <%= link_to 'Страницы', pages_path %>
+  </li>
+  <% menu_for.each do |item| %>
+    <li class='list-group-item'>
+      <%= link_to item.title, item.url %>
+    </li>
+  <% end %>
+</ul>

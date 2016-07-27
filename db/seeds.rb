@@ -9,3 +9,7 @@ roles_array = %w(admin programmer director manager)
 25.times do |num|
   Button.create(roles: [roles_array.sample], link: "link_#{num}")
 end
+# create Menu
+30.times do |num|
+  Menu.create(roles: [roles_array.sample], url: '#', title: "title_#{num}")
+end

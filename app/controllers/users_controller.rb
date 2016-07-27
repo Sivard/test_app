@@ -1,4 +1,7 @@
 class UsersController < MainController
+  def index
+    @users = User.all
+  end
 
   def update
     user = User.find params[:id]

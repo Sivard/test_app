@@ -7,10 +7,17 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
-
-<div class='container'>
-	<%= yield %>
-</div>
-
+	<div class='container'>
+		<h1><%= link_to 'Главная страница', root_path %></h1>
+		<%= render 'main/buttons' %>
+		<div class='row'>
+			<div class='col-md-2'>
+				<%= render 'main/menu' %>
+			</div>
+			<div class='col-md-10'>
+				<%= yield %>
+			</div>
+		</div>
+	</div>
 </body>
 </html>

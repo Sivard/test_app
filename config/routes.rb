@@ -8,7 +8,8 @@ Rails.application.routes.draw do
   # You can have the root of your site routed with "root"
   root 'main#home'
 
-  resources :users, only: :update
+  resources :users, only: [:index, :update]
+  resources :pages, only: :index
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'

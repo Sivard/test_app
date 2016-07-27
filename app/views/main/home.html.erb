@@ -1,30 +1,14 @@
-<h1>Главная страница</h1>
-<p>
-  Здравствуйте, <%= current_user.email %>! Ваша текущая роль 
-  <b><%= current_user.role%></b>
-  поменять на 
-  <%= simple_form_for current_user, url: user_path(current_user), method: :put do |u| %>
-    <%= u.input :role, collection: User.roles.keys %>
-    <%= u.submit 'Поменять роль' %>
-  <% end %>
-</p>
 
 <div class='row'>
-  <% actions_for(current_user).each do |action| %>
-    <div class="btn-group">
-      <%= link_to action.link, '#', class: "btn btn-default" %>
-    </div>
-  <% end %>
-</div>
- 
-<div class='left'>
-  <%#= menu_for current_user, scope: :left do |item| %>
-    <li>
-    	<a href='<%#= item.url%>'>
-    		<%#= item.title %>
-    	</a>
-    </li>
-  <%# end %>
+  <p>
+    Здравствуйте, <%= current_user.email %>! Ваша текущая роль 
+    <b><%= current_user.role%></b>
+    поменять на 
+    <%= simple_form_for current_user, url: user_path(current_user), method: :put do |u| %>
+      <%= u.input :role, collection: User.roles.keys %>
+      <%= u.submit 'Поменять роль' %>
+    <% end %>
+  </p>
 </div>
 
 <table>
