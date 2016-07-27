@@ -4,5 +4,5 @@ class User < ActiveRecord::Base
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable
 
-  enum roles: {admin: 0, programmer: 1, director: 2, manager: 3}
+  enum role: {admin: 0, programmer: 1, director: 2, manager: 3}
 end
