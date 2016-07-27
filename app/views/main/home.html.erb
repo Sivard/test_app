@@ -1,5 +1,13 @@
 <h1>Главная страница</h1>
-<p>Здравствуйте, <%= current_user.email %>!</p>
+<p>
+  Здравствуйте, <%= current_user.email %>! Ваша текущая роль 
+  <b><%= current_user.role%></b>
+  поменять на 
+  <%= simple_form_for current_user, url: user_path(current_user), method: :put do |u| %>
+    <%= u.input :role, collection: User.roles.keys %>
+    <%= u.submit 'Поменять роль' %>
+  <% end %>
+</p>
 
 <div class='row'>
   <% actions_for(current_user).each do |action| %>

@@ -6,3 +6,4 @@ ru:
       user:
         email: Электронная почта
         password: Пароль
+        role: Роль
