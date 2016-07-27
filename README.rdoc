@@ -3,3 +3,5 @@
 1. bundle install
 2. config .env
 3. rake db:create
+4. rake db:migrate
+5. rake db:seed
