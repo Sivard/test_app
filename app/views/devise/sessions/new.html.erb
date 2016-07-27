@@ -1,27 +1,33 @@
-<h2>Войти в систему</h2>
-<p>электкронная почта: <b>example@mail.ru</b> пароль: <b>12345678</b></p>
+<div class='container-fluid'>
+  <div class="row">
+    <div class='col-md-4 col-md-offset-4'>
+      <h2>Войти в систему</h2>
+      <p>электкронная почта: <b>admin@example.ru</b> пароль: <b>12345678</b></p>
 
-<%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
-  <div class="field">
-    <%= f.label :email %><br />
-    <%= f.email_field :email, autofocus: true %>
+      <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+        <div class="field">
+          <%= f.label :email %><br />
+          <%= f.email_field :email, autofocus: true %>
+        </div>
+
+        <div class="field">
+          <%= f.label :password %><br />
+          <%= f.password_field :password, autocomplete: "off" %>
+        </div>
+
+        <% if devise_mapping.rememberable? -%>
+          <div class="field">
+            <%= f.check_box :remember_me %>
+            <%= f.label :remember_me %>
+          </div>
+        <% end -%>
+
+        <div class="actions">
+          <%= f.submit "Зайти" %>
+        </div>
+      <% end %>
+
+      <%= render "devise/shared/links" %>
+    </div>  
   </div>
-
-  <div class="field">
-    <%= f.label :password %><br />
-    <%= f.password_field :password, autocomplete: "off" %>
-  </div>
-
-  <% if devise_mapping.rememberable? -%>
-    <div class="field">
-      <%= f.check_box :remember_me %>
-      <%= f.label :remember_me %>
-    </div>
-  <% end -%>
-
-  <div class="actions">
-    <%= f.submit "Зайти" %>
-  </div>
-<% end %>
-
-<%= render "devise/shared/links" %>
+</div>

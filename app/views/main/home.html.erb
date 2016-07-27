@@ -1,2 +1,36 @@
-<h1>Main#home</h1>
-<p>Find me in app/views/main/home.html.erb</p>
+<h1>Главная страница</h1>
+
+<div>
+  <%= actions_for current_user do |action| %>
+    <div class='row'>
+      <%#= link_to action.link %>
+    </div>
+  <% end %>
+</div>
+ 
+<div class='left'>
+  <%#= menu_for current_user, scope: :left do |item| %>
+    <li>
+    	<a href='<%#= item.url%>'>
+    		<%#= item.title %>
+    	</a>
+    </li>
+  <%# end %>
+</div>
+
+<table>
+	<tr>
+  	<%#= data_for current_user, ObjectClass do |field|  %>
+      <th><%#= field.title %></th>
+   <%# end %>
+	</tr>
+	<%# @collection.each do |object| %>
+    <tr>
+      <%#= data_for current_user, object do |data| %>
+        <td>
+          <%#= data %>
+        </td>
+      <%# end %>
+    </tr>
+	<%# end %>
+</table>
