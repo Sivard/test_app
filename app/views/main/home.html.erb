@@ -1,9 +1,10 @@
 <h1>Главная страница</h1>
+<p>Здравствуйте, <%= current_user.email %>!</p>
 
-<div>
-  <%= actions_for current_user do |action| %>
-    <div class='row'>
-      <%#= link_to action.link %>
+<div class='row'>
+  <% actions_for(current_user).each do |action| %>
+    <div class="btn-group">
+      <%= link_to action.link, '#', class: "btn btn-default" %>
     </div>
   <% end %>
 </div>
