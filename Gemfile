@@ -47,4 +47,5 @@ end
 
 gem 'devise'
 gem 'pundit'
+gem 'dotenv-rails'
 
